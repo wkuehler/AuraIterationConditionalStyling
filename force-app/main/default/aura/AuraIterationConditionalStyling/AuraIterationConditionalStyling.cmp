@@ -1,0 +1,14 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+
+    <aura:attribute name="items" type="String[]" default="['red', 'green', 'blue']" />
+
+    <lightning:card>
+        <lightning:layout horizontalAlign="center" verticalAlign="center" multipleRows="true" class="slds-p-around_medium">
+            <aura:iteration items="{!v.items}" var="increment" indexVar="index">
+                <lightning:layoutItem size="12" class="{!if(equals(index, v.items.length - 1), ' ', 'slds-border_bottom')}"> 
+                    <lightning:formattedText value="{!increment}" />
+                </lightning:layoutItem>
+            </aura:iteration>
+        </lightning:layout>
+    </lightning:card>
+</aura:component>	
